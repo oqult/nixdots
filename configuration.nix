@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ lib, callPackage, config, pkgs, ... }:
 
 {
   imports =
@@ -64,6 +64,7 @@
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
   services.system76-scheduler.enable = true;
+  services.desktopManager.cosmic.xwayland.enable = true;
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
 
   # Configure keymap in X11
