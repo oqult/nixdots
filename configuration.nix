@@ -117,6 +117,7 @@
 
   # steam
   programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
 
   # flatpak
@@ -176,6 +177,7 @@
         dontPatchELF = true;
         nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.kdePackages.wrapQtAppsHook];
       }))
+    ntfs3g
   ];
 
 
