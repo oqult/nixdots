@@ -17,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -66,6 +66,9 @@
   services.system76-scheduler.enable = true;
   services.desktopManager.cosmic.xwayland.enable = true;
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
+
+  # hyprland
+  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -178,6 +181,19 @@
         nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.kdePackages.wrapQtAppsHook];
       }))
     ntfs3g
+    kitty
+    nwg-displays
+    nwg-look
+    hypridle
+    hyprlock
+    hyprpolkitagent
+    xdg-desktop-portal-hyprland
+    dunst
+    waybar
+    wofi
+    cliphist
+    terraform
+    krita
   ];
 
 
